@@ -1,0 +1,6 @@
+{
+  "name": "DevGuard AI",
+  "description": "Production-ready AI-powered code security scanning platform for Python, JavaScript and TypeScript projects with automated AST vulnerability triage and Gemini remediation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-canvas: #0B0F19;
+  --color-surface-1: #0E1526;
+  --color-surface-2: #161F33;
+  --color-surface-3: #1E293B;
+  --color-surface-4: #24324D;
+
+  --color-primary-violet: #7C3AED;
+  --color-electric-violet: #8B5CF6;
+  --color-ai-violet: #A78BFA;
+  --color-cyan-info: #38BDF8;
+
+  --color-severity-critical: #EF4444;
+  --color-severity-high: #F59E0B;
+  --color-severity-medium: #EAB308;
+  --color-severity-low: #38BDF8;
+  --color-severity-secure: #10B981;
+}
+
+:root {
+  --canvas-bg: #0B0F19;
+  --surface-1: #0E1526;
+  --surface-2: #161F33;
+  --surface-3: #1E293B;
+  --surface-4: #24324D;
+  --primary-accent: #7C3AED;
+  --electric-accent: #8B5CF6;
+  --text-primary: #DFE2F1;
+  --text-muted: #94A3B8;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-structural: #1E293B;
+}
+
+body {
+  margin: 0;
+  background-color: var(--canvas-bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Inset Structural Highlight for level 2 cards */
+.bevel-card {
+  background-color: #161F33;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.bevel-card-hover:hover {
+  background-color: #1E293B;
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Modal and popover elevation level 4 */
+.modal-surface {
+  background-color: rgba(22, 31, 51, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Scan-line animation for progress bar */
+@keyframes scanSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-scan {
+  animation: scanSweep 1.8s infinite ease-in-out;
+}
+
+/* Custom scrollbars for code diffs and tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #24324D;
+}
